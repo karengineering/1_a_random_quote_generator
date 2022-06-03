@@ -64,6 +64,7 @@ function printQuote() {
 
   html += `</p>`
   document.getElementById('quote-box').innerHTML = html;
+  document.querySelector('body').style.backgroundColor = randRGB(randValue);
   return html;
 }
 
@@ -74,10 +75,7 @@ function printQuote() {
 const randRGB = (value) => `rgb( ${value(256)}, ${value(256)}, ${value(256)} )`;
 
 // Refresh to random quote and background color every 5 seconds 
-setInterval(function () {
-  printQuote();
-  document.querySelector('body').style.backgroundColor = randRGB(randValue);
-}, 5000);
+setInterval(function () {printQuote();}, 5000);
 
   /***
  * click event listener for the print quote button
